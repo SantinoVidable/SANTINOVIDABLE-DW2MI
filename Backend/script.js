@@ -1,25 +1,37 @@
 
 
-let nombreproducto= "paquetes de galletitas" 
-let preciounitario= 1000
 
- 
-cantidaddeseada = prompt("Ingrese la cantidad de " + nombreproducto + " " +  "que desea comprar")
-costototal = preciounitario * cantidaddeseada
+let nombre
+let mail
+let contraseña
 
 
-let descuento;
-if( cantidaddeseada >= 5){
-    descuento= costototal * 0.1;
-    costototalcondescuento = costototal - descuento
-    alert("El costo total de la  compra  con descuento es " + costototalcondescuento )
+function registrarse(){
+ nombre = prompt(" ¿Como te llamas?")
+ mail = prompt("Decime tu email")
+ contraseña = prompt ("Decime tu contraseña")
+alert ("Se ha registrado tu usuario" + " " +  nombre)
+}
+
+function iniciodesesion(){
+ let maillogin = prompt(" Ingrese su email" )
+ let nuevaContraseña = prompt("Ingrese su contraseña")
+
+if( mail== maillogin) {
+
+if ( contraseña == nuevaContraseña ){
+    alert( "Se ha iniciado sesion correctamente")
 }
 else{
-    descuento = 0;
-    alert("El costo total de la  compra es " + costototal)
+alert("Su  contraseña es incorrecta" )
+}
+}
 }
 
+function modificarcontraseña(nuevacontraseña){
+    contraseña = nuevacontraseña
+    alert(" se modificó tu contraseña, ahora es " + contraseña)     
+}
 
-
-
+modificarcontraseña("santino567")
 
