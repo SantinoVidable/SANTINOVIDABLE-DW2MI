@@ -7,10 +7,10 @@ let contraseña
 
 
 function registrarse(){
- nombre = prompt(" ¿Como te llamas?")
- mail = prompt("Decime tu email")
- contraseña = prompt ("Decime tu contraseña")
-alert ("Se ha registrado tu usuario" + " " +  nombre)
+ nombre = prompt(" ¿Como se llamas?")
+ mail = prompt("Ingrese su email")
+ contraseña = prompt ("Ingrese su  contraseña")
+alert ("Se ha registrado su usuario" + " " +  nombre)
 }
 registrarse()
 
@@ -40,15 +40,15 @@ if (cambiarcontraseña == "si"){
     let emailconfirmacion = prompt("Por favor inguese su mail")
     if(emailconfirmacion == mail){
         nuevacontraseña = prompt("Ingrese su nueva contraseña")
-        alert("Se modifico tu contraseña, ahora es" + " " + nuevacontraseña)
+        alert("Se modifico su contraseña, ahora es" + " " + nuevacontraseña)
     }
     else{
         alert( "El mail ingresado no coincide con el registrado")
     }
     
-} else if (cambiarcontraseña.toLowerCase() === "no") {
+} else if (cambiarcontraseña == "no") {
      
-     alert("No se ha cambiado la contraseña.")
+     alert("No se han realizado cambios.")
     }
     else {
         alert("Por favor responda con 'si' o con 'no'")
