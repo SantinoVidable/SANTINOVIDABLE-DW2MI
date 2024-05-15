@@ -28,8 +28,9 @@ function iniciodesesion(){
 
 
 function modificarcontraseña(nuevacontraseña){
-let cambiarcontraseña = prompt(" ¿Desea cambiar su contraseña? (si/no)")
+let cambiarcontraseña
 
+cambiarcontraseña = prompt(" ¿Desea cambiar su contraseña? (si/no)")
 if (cambiarcontraseña == "si"){
     let emailconfirmacion = prompt("Por favor inguese su mail")
     if(emailconfirmacion == mail){
@@ -40,7 +41,7 @@ if (cambiarcontraseña == "si"){
     
 } else if (cambiarcontraseña == "no") {
      
-     alert("No se han realizado cambios.")}
+     alert("No se  realizaran cambios.")}
     else {
         alert("Por favor responda con 'si' o con 'no'")}}
 modificarcontraseña()
