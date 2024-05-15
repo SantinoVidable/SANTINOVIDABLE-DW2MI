@@ -12,6 +12,8 @@ function registrarse(){
  contraseña = prompt ("Decime tu contraseña")
 alert ("Se ha registrado tu usuario" + " " +  nombre)
 }
+registrarse()
+
 
 function iniciodesesion(){
  let maillogin = prompt(" Ingrese su email" )
@@ -27,11 +29,30 @@ alert("Su  contraseña es incorrecta" )
 }
 }
 }
+iniciodesesion()
+
+
 
 function modificarcontraseña(nuevacontraseña){
-    contraseña = nuevacontraseña
-    alert(" se modificó tu contraseña, ahora es " + contraseña)     
+
+let cambiarcontraseña = prompt(" ¿Desea cambiar su contraseña? (si/no)")
+if (cambiarcontraseña == "si"){
+    let emailconfirmacion = prompt("Por favor inguese su mail")
+    if(emailconfirmacion == mail){
+        nuevacontraseña = prompt("Ingrese su nueva contraseña")
+        alert("Se modifico tu contraseña, ahora es" + " " + nuevacontraseña)
+    }
+    else{
+        alert( "El mail ingresado no coincide con el registrado")
+    }
+    
+} else if (cambiarcontraseña.toLowerCase() === "no") {
+     
+     alert("No se ha cambiado la contraseña.")
+    }
+    else {
+        alert("Por favor responda con 'si' o con 'no'")
+    }
 }
 
-modificarcontraseña("santino567")
-
+modificarcontraseña()
