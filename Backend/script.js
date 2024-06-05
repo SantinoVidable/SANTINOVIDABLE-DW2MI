@@ -1,47 +1,59 @@
-let nombre
-let mail
-let contraseña
-
+let basedeDatos = [];
 
 function registrarse(){
- nombre = prompt(" ¿Como se llama?")
- mail = prompt("Ingrese su email")
- contraseña = prompt ("Ingrese su  contraseña")
-alert ("Se ha registrado su usuario" + " " +  nombre)}
-registrarse()
+    let nombre = prompt("¿Cómo se llama?");
+    let mail = prompt("Ingrese su email");
+    let contraseña = prompt("Ingrese su contraseña");
 
+    let usuarioExistente = basedeDatos.find(usuario => usuario.email === mail);
+    
+    if (usuarioExistente) {
+        alert("El email ya está registrado.");
+    } else {
+        let nuevoUsuario = {
+            usuario: nombre,
+            email: mail,
+            contraseña: contraseña
+        };
+        basedeDatos.push(nuevoUsuario);
+        alert("Se ha registrado su usuario " + nombre);
+    }
+}
 
 function iniciodesesion(){
-    let emaillogin 
-    let nuevaContraseña
-   
-    emaillogin = prompt(" Ingrese su email" )
-   if( mail== emaillogin) {
-       nuevaContraseña = prompt("Ingrese su contraseña")
-    } else{
-        alert("El email ingresado no coincide con el registrado") }
-       if(contraseña == nuevaContraseña ){ 
-       alert( "Se ha iniciado sesion correctamente") }
-   else{
-       alert( "La contraseña ingresada no coincide con la registrada") } }
- iniciodesesion()
-
-
-function modificarcontraseña(nuevacontraseña){
-let cambiarcontraseña
-
-cambiarcontraseña = prompt(" ¿Desea cambiar su contraseña? (si/no)")
-if (cambiarcontraseña == "si"){
-    let emailconfirmacion = prompt("Por favor inguese su mail")
-    if(emailconfirmacion == mail){
-        nuevacontraseña = prompt("Ingrese su nueva contraseña")
-        alert("Se modifico su contraseña, ahora es" + " " + nuevacontraseña)}
-    else{
-        alert( "El mail ingresado no coincide con el registrado")}
+    let emaillogin = prompt("Ingrese su email");
+    let usuarioEncontrado = basedeDatos.find(usuario => usuario.email === emaillogin);
     
-} else if (cambiarcontraseña == "no") {
-     
-     alert("No se  realizaran cambios.")}
-    else {
-        alert("Por favor responda con 'si' o con 'no'")}}
-modificarcontraseña()
+    if (usuarioEncontrado) {
+        let Contraseña = prompt("Ingrese su contraseña");
+        if (usuarioEncontrado.contraseña === Contraseña) {
+            alert("Se ha iniciado sesión correctamente");
+        } else {
+            alert("La contraseña ingresada no coincide con la registrada");
+        }
+    } else {
+        alert("El email ingresado no está registrado.");
+    }
+}
+
+function modificarContraseña() {
+    let emaillogin = prompt("Ingrese su email");
+    let usuarioEncontrado = basedeDatos.find(usuario => usuario.email === emaillogin);
+    
+    if (usuarioEncontrado) {
+        let contraseñaActual = prompt("Ingrese su contraseña actual");
+        if (usuarioEncontrado.contraseña === contraseñaActual) {
+            let nuevaContraseña = prompt("Ingrese su nueva contraseña");
+            usuarioEncontrado.contraseña = nuevaContraseña;
+            alert("La contraseña se ha modificado correctamente");
+        } else {
+            alert("La contraseña actual no coincide con la registrada");
+        }
+    } else {
+        alert("El email ingresado no está registrado.");
+    }
+}
+
+registrarse();
+iniciodesesion();
+modificarContraseña();
