@@ -9,6 +9,7 @@ function registrarse(){
     
     if (usuarioExistente) {
         alert("El email ya está registrado.");
+        alert("Falla al registrarse.");
     } else {
         let nuevoUsuario = {
             usuario: nombre,
@@ -17,8 +18,11 @@ function registrarse(){
         };
         basedeDatos.push(nuevoUsuario);
         alert("Se ha registrado su usuario " + nombre);
+        alert("Registro exitoso. ");
     }
 }
+
+
 
 function iniciodesesion(){
     let emaillogin = prompt("Ingrese su email");
@@ -54,6 +58,16 @@ function modificarContraseña() {
     }
 }
 
-registrarse();
-iniciodesesion();
-modificarContraseña();
+
+document.getElementById("registrarse").addEventListener("click", registrarse);
+document.getElementById("iniciodesesion").addEventListener("click", iniciodesesion);
+document.getElementById("modificarContraseña").addEventListener("click", modificarContraseña);
+
+
+
+
+
+
+
+
+
