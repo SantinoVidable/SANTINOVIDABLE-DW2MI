@@ -36,10 +36,8 @@ body {
             width: 80%;
         margin: 10px auto;
         display: flex;
-        flex-direction: column-reverse;
-        display: block;
         height: auto;
-          
+         
           
         }
         
